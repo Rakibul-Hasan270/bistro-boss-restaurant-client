@@ -1,0 +1,5 @@
+/* Center align the thumbnail images using Tailwind utility via @apply */
+.carousel .thumbs-wrapper {
+  display: flex;
+  justify-content: center;
+}
