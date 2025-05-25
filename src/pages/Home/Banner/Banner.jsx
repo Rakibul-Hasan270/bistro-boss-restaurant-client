@@ -23,7 +23,7 @@ const Banner = () => {
             emulateTouch= {true}
         >
             {images.map((img, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="relative md:h-[700px]">
                     <img src={img} alt={`Slide ${index + 1}`} className="w-full h-auto object-cover" />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#1f1f1f] to-[rgba(31,31,31,0.2)] z-10 opacity-80"></div>
