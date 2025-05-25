@@ -9,10 +9,15 @@ import img2 from '../../../assets/home/slide2.jpg'
 import img3 from '../../../assets/home/slide3.jpg'
 import img4 from '../../../assets/home/slide4.jpg'
 import img5 from '../../../assets/home/slide5.jpg'
+import SectionHeading from '../../../components/SectionHeading/SectionHeading';
 
 const Slider = () => {
     return (
         <>
+            <SectionHeading
+                subHeading={'From 11:00am to 10:00pm'}
+                heading={'ORDER ONLINE'}
+            ></SectionHeading>
             <Swiper
                 slidesPerView={4}
                 spaceBetween={30}
