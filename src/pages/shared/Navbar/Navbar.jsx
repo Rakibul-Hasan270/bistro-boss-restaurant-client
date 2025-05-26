@@ -4,12 +4,12 @@ const Navbar = () => {
 
     const links = <div className='md:flex items-center justify-center'>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
-        <li><NavLink to="/my_card" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>My Card</NavLink></li>
+        <li><NavLink to="/menu" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Our Menu</NavLink></li>
         <li><NavLink to="/login" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Login</NavLink></li>
     </div>
 
     return (
-        <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 navbar bg-gray-800 shadow-sm w-full max-w-6xl">
+        <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 navbar shadow-sm w-full max-w-6xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

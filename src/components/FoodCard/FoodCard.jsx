@@ -3,7 +3,7 @@ import React from 'react';
 const FoodCard = ({ food }) => {
     const { image, name, recipe } = food;
     return (
-        <div className="card bg-base-100 shadow-2xl border">
+        <div className="card bg-base-100 shadow-2xl md:border">
             <figure>
                 <img
                     src={image}

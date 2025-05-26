@@ -6,6 +6,7 @@ import Featured from '../Featured/Featured';
 import BistroComment from '../BistroComment/BistroComment';
 import CallOnly from '../Callonly/CallOnly';
 import RecommendedFood from '../RecommendedFood/RecommendedFood';
+import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <CallOnly></CallOnly>
             <RecommendedFood></RecommendedFood>
             <Featured></Featured>
+            <Testimonial></Testimonial>
         </div>
     );
 };
