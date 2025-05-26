@@ -4,7 +4,7 @@ const MenuCard = ({ info }) => {
     const { image, recipe, name, price, } = info;
 
     return (
-        <div className='flex gap-4 shadow-xl'>
+        <div className='max-w-6xl mx-auto md:w-[600px] flex gap-4 shadow-xl'>
             <img className='w-28 rounded-b-full rounded-tr-full' src={image} alt="" />
             <div>
                 <p className='uppercase text-xl'>{name} ------</p>

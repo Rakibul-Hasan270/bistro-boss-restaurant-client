@@ -1,20 +1,40 @@
 import React from 'react';
 import Cover from '../../shared/Cover/Cover';
 import img from '../../../assets/menu/banner3.jpg'
-import PopularMenu from '../../Home/PopularMenu/PopularMenu';
+import img1 from '../../../assets/menu/dessert-bg.jpeg'
+import pizza from '../../../assets/menu/pizza-bg.jpg'
+import salad from '../../../assets/menu/salad-bg.jpg'
+import soup from '../../../assets/menu/soup-bg.jpg'
+import useMenu from '../../../hooks/useMenu';
+import SectionHeading from '../../../components/SectionHeading/SectionHeading';
+import MenuCategory from '../../shared/MenuCategory/MenuCategory';
 
 
 const Menu = () => {
+    const [menu, loading] = useMenu();
+    const offered = menu.filter(info => info.category === 'offered');
+    const desserts = menu.filter(info => info.category === 'dessert');
+    const pizzas = menu.filter(info => info.category === 'pizza');
+    const salads = menu.filter(info => info.category === 'salad');
+    const soups = menu.filter(info => info.category === 'soup');
+
+    if (loading) return <p className='text-center mt-14'>loading...</p>
     return (
         <div className='mt-14 md:mt-0'>
-            <Cover img={img} heading={'OUR MENU'} subHeading={'Would you like to try a dish?'}></Cover>
-            <PopularMenu></PopularMenu>
+            <Cover coverImg={img} heading={'OUR MENU'} subHeading={'Would you like to try a dish?'}></Cover>
+            <SectionHeading heading="TODAY'S OFFER" subHeading="Don't miss"></SectionHeading>
 
-            <Cover img={img} heading={'OUR MENU'} subHeading={'Would you like to try a dish?'}></Cover>
-            <PopularMenu></PopularMenu>
-            
-            <Cover img={img} heading={'OUR MENU'} subHeading={'Would you like to try a dish?'}></Cover>
-            <PopularMenu></PopularMenu>
+            <MenuCategory item={offered}></MenuCategory>
+
+            <div className='space-y-12'>
+                <MenuCategory item={desserts} coverImg={img1} title='DESSERTS' subTitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
+
+                <MenuCategory item={pizzas} coverImg={pizza} title='PIZZA' subTitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
+
+                <MenuCategory item={salads} coverImg={salad} title='SALAd' subTitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
+
+                <MenuCategory item={soups} coverImg={soup} title='SOUP' subTitle='Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'></MenuCategory>
+            </div>
         </div>
     );
 };

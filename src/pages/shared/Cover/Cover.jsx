@@ -1,14 +1,14 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 
-const Cover = ({ img, heading, subHeading }) => {
+const Cover = ({ coverImg, heading, subHeading }) => {
     return (
-
         <Parallax
             blur={{ min: -50, max: 50 }}
-            bgImage={img}
+            bgImage={coverImg}
             bgImageAlt="the menu"
             strength={-200}
+            className='mb-8'
         >
             <div
                 className="hero h-[300px] md:h-[700px]">
@@ -21,7 +21,8 @@ const Cover = ({ img, heading, subHeading }) => {
                         </p>
                     </div>
                 </div>
-            </div></Parallax>
+            </div>
+        </Parallax>
     );
 };
 
