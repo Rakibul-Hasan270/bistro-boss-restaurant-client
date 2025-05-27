@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FoodCard = ({ food }) => {
-    const { image, name, recipe } = food;
+    const { image, category, name, recipe } = food;
     return (
         <div className="card bg-base-100 shadow-2xl md:border">
             <figure>
@@ -12,6 +12,7 @@ const FoodCard = ({ food }) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{recipe}</p>
+                <p className='text-yellow-500'>{category}</p>
                 <div className="card-actions justify-center">
                     <button className="btn btn-outline border-0 border-b-4">Add To Card</button>
                 </div>

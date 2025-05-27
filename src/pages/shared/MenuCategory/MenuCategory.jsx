@@ -2,7 +2,7 @@ import React from 'react';
 import MenuCard from '../MenuCard/MenuCard';
 import Cover from '../Cover/Cover';
 
-const MenuCategory = ({ item, title, subTitle, coverImg }) => {
+const MenuCategory = ({ item, coverImg, title, subTitle }) => {
 
     return (
         <div>
@@ -12,7 +12,7 @@ const MenuCategory = ({ item, title, subTitle, coverImg }) => {
                     item.map((info, idx) => <MenuCard key={idx} info={info}></MenuCard>)
                 }
             </div>
-                <div className='flex justify-center'><button className='btn btn-outline border-0 border-b-4'>ORDER YOUR FAVOURITE FOOD</button></div>
+            <div className='flex justify-center'><button className='btn btn-outline border-0 border-b-4'>ORDER YOUR FAVOURITE FOOD</button></div>
         </div>
     );
 };
