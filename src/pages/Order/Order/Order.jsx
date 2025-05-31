@@ -14,7 +14,7 @@ const Order = () => {
     const [tabIndex, setTabIndex] = useState(initialIndex);
 
     const [loading, , desserts, pizzas, salads, soups, drinks] = useItem();   // count index for array
-    if (loading) return <p className='text-center mt-18'>loading...</p>
+    // if (loading) return <p className='text-center mt-18'>loading...</p>
     return (
         <div className='mt-14 md:mt-0'>
             <Cover coverImg={orderImg} heading={'Order Now'} subHeading={'Would you like to try a dish?'}></Cover>

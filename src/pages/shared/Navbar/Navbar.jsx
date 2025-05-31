@@ -1,12 +1,26 @@
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
+    const { user, logOut } = useAuth();
 
     const links = <div className='md:flex items-center justify-center'>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
         <li><NavLink to="/menu" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Our Menu</NavLink></li>
         <li><NavLink to="/order/soup" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Order Now</NavLink></li>
+        {user && <li><NavLink to="/secret" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Secret</NavLink></li>}
+        <li><NavLink to="/login" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Login</NavLink></li>
     </div>
+
+    const handelLogOut = async () => {
+        try {
+            await logOut();
+            toast.success('log out success')
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-10 navbar shadow-sm w-full max-w-6xl">
@@ -33,8 +47,8 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             {
-                                // user ? <img src={user?.photoURL} alt="" /> : <img alt="Tailwind CSS Navbar component"
-                                //     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                user ? <img src={user?.photoURL} alt="" /> : <img alt="Tailwind CSS Navbar component"
+                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                             }
                         </div>
                     </div>
@@ -47,7 +61,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li onClick={handelLogOut}><a>Logout</a></li>
                     </ul>
                 </div>
             </div>

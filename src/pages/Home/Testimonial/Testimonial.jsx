@@ -13,7 +13,7 @@ import { GiConvergenceTarget } from "react-icons/gi";
 const Testimonial = () => {
     const [review, setReview] = useState([]);
     useEffect(() => {
-        fetch('/reviews.json')
+        fetch('http://localhost:9000/reviews')
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])
